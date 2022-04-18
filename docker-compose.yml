@@ -6,7 +6,7 @@ services:
     ports:
       - "8008:8008"
     volumes:
-      - .:/var/codepiece-datastore
+      - .:/var/sku-datastore
     # env_file:
     #   - docker-compose.env
     depends_on:
@@ -20,7 +20,7 @@ services:
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
-      - POSTGRES_DB=codepiece
+      - POSTGRES_DB=sku
     ports:
       - "5432:5432"
 
