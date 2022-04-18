@@ -1,0 +1,45 @@
+version: '3.4'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8008:8008"
+    volumes:
+      - .:/var/codepiece-datastore
+    # env_file:
+    #   - docker-compose.env
+    depends_on:
+      - postgres_database
+      - elastic_search
+
+  postgres_database:
+    container_name: pg_container
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=codepiece
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      - PGADMIN_DEFAULT_PASSWORD=root
+      - PGADMIN_DEFAULT_USER=root
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+    ports:
+      - "5050:80"
+
+  elastic_search:
+    container_name: medical_elastic_search
+    image: elasticsearch:7.8.1
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+    
