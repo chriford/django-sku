@@ -19,6 +19,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - run: |
+        git fetch --prune --unshallow
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
@@ -38,9 +40,10 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     
-    # - name: Run tests with pytest
-    #   run: |
-    #     pytest
+    - name: Run tests with pytest
+      run: |
+        export PYTHONPATH=./tests
+        pytest
 
     - name: Deploy to heroku
       env:
