@@ -1,3 +1,3 @@
 django-elasticsearch-dsl
-pytest
+pytest-django
 django==3.*
