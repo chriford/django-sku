@@ -1,0 +1,3 @@
+django-elastiscsearch-dsl
+pytest
+django==3.*
