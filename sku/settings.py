@@ -27,7 +27,7 @@ SECRET_KEY = '8_dg7-tww($gs*ctzccpe+m@2%1(1svjl_$kjsz7vqe=72*-(a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['real-brains.herokuapp.com']
 
 
 # Application definition
