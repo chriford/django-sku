@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rolepermissions',
     'authentication',
     'teachers',
     'pupils'
@@ -150,3 +151,5 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 production_db  =  dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(production_db)
+
+ROLEPERMISSIONS_MODULE = 'roles.roles'
