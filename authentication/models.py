@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractUser, AbstractBaseUser
+from django.core.validators import MaxLengthValidator, MinLengthValidator
 
 class User(AbstractBaseUser):
     first_name = models.CharField(
@@ -27,6 +28,12 @@ class User(AbstractBaseUser):
         null=False,
         blank=False,
     )
+    grade = models.SmallIntegerField(
+        _("Grade"),
+        null=False,
+        blank=False,
+        validators=[MinLengthValidator(8), MaxLengthValidator(12)]
+    )
     created = models.DateTimeField(
         _("date created"),
         editable=False,
@@ -34,12 +41,12 @@ class User(AbstractBaseUser):
     )
     def __str__(self):
         if self.first_name & self.last_name:
-            return f"{self.first_name} {self.last_name}"
+            return f"{self.first_name} {self.last_name}-G{self.grade}"
         else:
-            return self.username
+            return f"{self.username}-G{self.grade}"
     
     class Meta:
-        ordering = ["created"]
+        ordering = ["-created"]
         verbose_name = "User"
         verbose_name_plural = "Users"
 
