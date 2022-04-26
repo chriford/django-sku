@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'rolepermissions',
     'authentication',
     'teachers',
-    'pupils'
+    'pupils',
 ]
 
 MIDDLEWARE = [
