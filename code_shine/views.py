@@ -13,4 +13,6 @@ class HomePage(ListView):
     def get_queryset(self):
         data = [1,2,3,4]
         return HttpResponse(f"{data}")
+
+
 # Create your views here.
