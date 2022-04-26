@@ -4,5 +4,5 @@ pytest-django
 django==3.*
 gunicorn 
 dj-database-url 
-whitenoise 
+whitenoise==3.3.1
 psycopg2
