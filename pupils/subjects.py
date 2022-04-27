@@ -11,3 +11,7 @@ class Subjects(models.Model):
     
     def __str__(self):
         return self.subject
+    
+    class Meta:
+        verbose_name = "Subject"
+        verbose_name_plural = "Subjects"

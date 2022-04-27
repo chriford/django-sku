@@ -7,6 +7,6 @@ class StatusChoices(Enum):
     
     @classmethod
     def choices(cls):
-        choice_tuple = (tuple(choice.name, choice.value) for choice in cls)
+        choice_tuple = (tuple(cls.COMPLETED, choice.value) for choice in cls)
         return choice_tuple
 

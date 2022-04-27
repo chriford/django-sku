@@ -31,6 +31,11 @@ class Question(models.Model):
         _("Question"),
         max_length=300,
     )
+    ban_count = models.IntegerField(
+        null=True, 
+        blank=True, 
+        default=0,
+    )
     status = models.CharField(
         _("status"),
         choices=STATUS_CHOICES,
