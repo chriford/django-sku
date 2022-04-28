@@ -14,18 +14,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Subjects',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('subject', models.CharField(blank=True, max_length=30, null=True, verbose_name='Subject')),
-            ],
-            options={
-                'verbose_name': 'Subject',
-                'verbose_name_plural': 'Subjects',
-            },
-        ),
-        migrations.CreateModel(
-            name='QuestionListView',
+            name='AnswerListView',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('is_superuser', models.BooleanField(default=False, help_text='Designates that this user has all permissions without explicitly assigning them.', verbose_name='superuser status')),

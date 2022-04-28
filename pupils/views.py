@@ -9,8 +9,7 @@ class QuestionListView(ListView, PermissionsMixin):
     
     def get_context_data(self,**kwargs):
         context = super().get_context_data(**kwargs)
-        
         context["title"] = "questions"
         
     def get_queryset(self):
-        return HttpResponse("Hello")# Create your views here.
+        return HttpResponse("Hello")

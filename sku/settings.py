@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'real-brains.herokuapp.com', 
-    '127.0.0.1','localhost'
+    '127.0.0.1','localhost', '*'
 ]
 
 
@@ -43,11 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rolepermissions',
+    'imagekit',
+    # 'pillow',
     'authentication',
     'teachers',
     'pupils',
+    'crispy_forms',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -85,7 +87,6 @@ WSGI_APPLICATION = 'sku.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -140,12 +141,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/static/'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-
+MEDIA_URL = '/media/'
 #  Add configuration for static files storage using whitenoise
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
@@ -153,3 +149,7 @@ production_db  =  dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(production_db)
 
 ROLEPERMISSIONS_MODULE = 'roles.roles'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
