@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import User
+from .models import User, UserProfile
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
@@ -14,4 +14,14 @@ class UserAdmin(admin.ModelAdmin):
         "created",
     ]
     list_per_page = 12
-# Register your models here.
+    
+    
+@admin.register(UserProfile)
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = [
+        "user"
+        ,"grade"
+        ,"sex"
+        ,"about_me"
+        ,"cell"
+    ]
