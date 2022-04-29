@@ -16,7 +16,7 @@ from .models import Question
 class QuestionForm(ModelForm):
     class Meta:
         model = Question
-        exclude = ["slug"]
+        exclude = ["slug", "ban_count", "status"]
 
 
     def __init__(self, *args, **kwargs):

@@ -1,0 +1,78 @@
+{% extends 'layout/base.html' %}
+{% block head %}
+    <title>
+        Questions
+    </title>
+    <style>
+        .q-card {
+            padding: 10px 10px 10px 10px;
+            border: 1px solid #BFBFBF;
+            background-color: white;
+            box-shadow: 8px 5px 5px #aaaaaa;
+            transform-origin: 30% 20%;
+            box-shadow: inset;
+            -webkit-box-direction: reverse;
+            transition: transform 2s, filter 2s ease-in-out;
+            border-top-color: rgb(245, 245, 245);
+            transition-delay: 0.2s;
+        }
+
+        .q-card:hover {
+            border-style: outset;
+            transform: scale(1.02);
+        }
+    </style>
+{% endblock head%}
+
+{% load static %}
+{% block content %}
+{% include 'includes/question_add.html' %}
+<br /> <br />
+<div class="p-2 m-6">
+    <div class="grid md-auto gap-2 question-list-div">
+        <table class="table caption-top q-card">
+          <caption>List of users</caption>
+          <thead>
+            <tr>
+              <th scope="col">photo</th>
+              <th scope="col">First name</th>
+              <th scope="col">Last name</th>
+              <th scope="col">Username</th>
+              <th scope="col">Email</th>
+              <th scope="col">Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>@mdo</td>
+              <td>@mdo</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+              <td>@fat</td>
+              <td>@fat</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>the Bird</td>
+              <td>the Bird</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</div>
+<script src="{% static 'js/questions.js' %}"></script>
+{% endblock content%}

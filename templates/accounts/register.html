@@ -1,0 +1,54 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block head %}
+<title>Signup</title>
+<style>
+    .signup-card {
+        box-shadow: 4px 4px 10px 4px rgb(106, 163, 238);
+        background-color: white;
+        margin-top: 8em;
+    }
+
+    .card-text {
+        font-size: 18pt;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="signup-card container p-6 lg:min-full md:w-98">
+    <form action="#" method="post" id="form" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="card-text text-center mb-3">
+            Sign Up
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="username" placeholder="username" required>
+            <label for="floatingInput">Username</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="first_name" placeholder="first name" required>
+            <label for="floatingInput">First Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="last_name" placeholder="last name" required>
+            <label for="floatingInput">Last Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" required>
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" name="password1" placeholder="Password" required>
+            <label for="floatingPassword">Password</label>
+        </div><br>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" name="password2" placeholder="Password 2" required>
+            <label for="floatingPassword">Confirm Password</label>
+        </div><br>
+        <button class="btn btn-primary w-100">Create</button>
+        <div class="text-center" style="margin-top: 12px;">
+            Already have an account? <a href="{% url 'accounts:login' %}">Login</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -12,23 +12,27 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#% url 'home' %}">Home</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'accounts:home' %}"> <span class="fa-solid fa-home"></span> Home</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#% url 'home' %}">Questions</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'pupils:questions' %}"><span class="fa-duoquote fa-question"></span> Questions</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#% url 'home' %}">Teachers</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'pupils:user-questions' %}"><span class="fa-duoquote fa-question"></span> Your Questions</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#% url 'home' %}">Users</a>
+              <a class="nav-link active" aria-current="page" href="#% url 'home' %}"><span class="fa-solid fa-users"></span> Teachers</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'accounts:users' %}"><span class="fa-solid fa-users"></span> Users</a>
             </li>
             
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#% url 'home' %}">Admin</a>
+              <a class="nav-link active" aria-current="page" href="#% url 'home' %}"><span class="fa-solid fa-user"></span>  Admin</a>
             </li>
 
             <li class="nav-item dropdown">
